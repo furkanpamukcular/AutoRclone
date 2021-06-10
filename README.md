@@ -110,6 +110,6 @@ Sizin için gereklı olan yorum satırlarını türkçeleştirdim ve gerekli bil
 Sonunda buraya gelebildik :D<br />
 Basit bir işlem yapacağız.<br />
 `crontab -e` yazıyoruz ve crontab ımıza ulaşıyoruz.<br />
-**NOT:** Crontab ı ilk defa açıyorsanız hangi editör ü kullanmak istediğinizi sorar. Tercihim `nano` kullanmanız kullanımı basit.<br />
-en alt satıra `0 */1 * * * /usr/bin/python3 /root/autorclone/autorclone.py` yazıyoruz ve bitiyor.<br />
-**NOT:** klasörün yeri değişik ise klasörün ismini vs. değiştirin.
+**NOT: Crontab ı ilk defa açıyorsanız hangi editör ü kullanmak istediğinizi sorar. Tercihim `nano` kullanmanız kullanımı basit.**<br />
+en alt satıra `0 */1 * * * /usr/bin/python3 /root/autorclone/autorclone.py` yazıyoruz ve bitiyor.
+**NOT: klasörün yeri değişik ise klasörün ismini vs. değiştirin.**
