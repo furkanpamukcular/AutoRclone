@@ -52,7 +52,7 @@ Adım 2. GDrive için Google Cloud üzerinde projemizi oluşturalım.
 Adım 3. Rclone Config
  ---------------------------------
 
- Rclone u vs. kurduktan sonra 
+ Rclone u vs. kurduktan sonra
  
  Linux için: rclone config
  Windows için: ./rclone.exe config
