@@ -31,7 +31,7 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  RClone u indirelim ve AutoRclone un bulunduğu klasöre atalım.<br />
  İndirme linki: [https://rclone.org/downloads/](https://rclone.org/downloads/)<br />
  WinFSP gerekebilir.<br />
- İndirme Linki: [https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9. 21096.msi)<br />
+ İndirme Linki: [https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi)<br />
  
  AutoRclone un bulunduğu klasörde Powershell penceresi açalım.<br />
  `pip3 install -r ./requirements.txt`
@@ -49,8 +49,6 @@ Adım 2. GDrive için Google Cloud üzerinde projemizi oluşturalım.
 
 Adım 3. Rclone Config
  ---------------------------------
-
- Rclone u vs. kurduktan sonra
  
  Linux için: rclone config
  Windows için: ./rclone.exe config
