@@ -63,7 +63,7 @@ Adım 2. Google Cloud üzerinde projemizi oluşturalım.
 ---------------------------------
 * [Google Cloud](https://console.cloud.google.com/) hesabınıza giriş yapın
 * Sol üstten 1 adet proje oluşturun, oluştuırduktan sonra projeyi seçin
-* Arama kısmına Drive yazın ve [Google Drive API]https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com Kısmına giriş yapıp Enable butonuna basın.
+* Arama kısmına Drive yazın ve [Google Drive API](https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com) Kısmına giriş yapıp Enable butonuna basın.
 * Soldaki Menüden [API & Services](https://console.cloud.google.com/apis/dashboard) kısmına gelin
 * Soldaki menüden OAuth consent screen kısmına gelin External seçeneğini seçin ve devam edin. * ile işaretlenen bilgileri doldurmanız yeterli.
 * Oluşturduktan sonra tekrar OAuth consent screen kısmına gelin Testing kısmının altındaki Publish App butonuna basın.
@@ -75,12 +75,12 @@ Adım 3. Service accountlarını oluşturalım
 
 **Service Accountlarını oluşturma**
 
-Kodumuz gayet basit.
-`python3 multifactory.py --quick-setup N`
+Kodumuz gayet basit.<br />
+`python3 multifactory.py --quick-setup N`<br />
 
-Ensondaki N yerine kaç tane proje açmak istiyosanız onu belirtin.
-Örnek kod:  `python3 multifactory.py --quick-setup N`
-1 Proje = 100 Kullanıcı = 75TB
+Ensondaki N yerine kaç tane proje açmak istiyosanız onu belirtin.<br />
+Örnek kod:  `python3 multifactory.py --quick-setup N`<br />
+1 Proje = 100 Kullanıcı = 75TB<br />
 
 **Herkese önerim 1 projeden fazla açmayın aksi takdirde google dan ban yiyebilirsiniz.**
 
@@ -94,9 +94,9 @@ Yine buradada komudumuz basit.
 
  * Google Drive'ı açın Shred drive ınıza girin ve linkin sonundaki kodu kopyalayın.
 
- Örnek Link: `https://drive.google.com/drive/folders/0APX5ggfgZnmEUayPVA`
- Örnek FolderID: `0APX5ggfgZnmEUayPVA`
- Örnek Kod: `python3 masshare.py -d 0APX5ggfgZnmEUayPVA`
+ Örnek Link: `https://drive.google.com/drive/folders/0APX5ggfgZnmEUayPVA`<br />
+ Örnek FolderID: `0APX5ggfgZnmEUayPVA`<br />
+ Örnek Kod: `python3 masshare.py -d 0APX5ggfgZnmEUayPVA`<br />
 
  Adım 5. Ayar Yapmak
 ---------------------------------
