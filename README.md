@@ -17,17 +17,16 @@ sudo git clone https://github.com/puffytr/AutoRclone AutoRclone && cd AutoRclone
 **Windows İçin**
 ---------------------------------
 Python3 ü indirelim ve kuralım
-İndirme linki: [https://www.python.org/downloads/release/python-395/](https://www.python.org/downloads/release/python-395/)
+İndirme linki: [https://www.python.org/downloads/release/python-395/](https://www.python.org/downloads/release/python-395/)<br />
 **Önemli NOT:** Kurulum dosyasını açtıktan sonra altta bulunan **Add to PATH** Kutucuğunu işaretleyin.
 
-Repoyu ister ZIP olarak ister GIT kullanarak çalışma alanımıza atalım.
-RClone u indirelim ve AutoRclone un bulunduğu klasöre atalım.
-İndirme linki: [https://rclone.org/downloads/](https://rclone.org/downloads/)
-WinFSP gerekebilir.
-İndirme Linki: [https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi)
+Repoyu ister ZIP olarak ister GIT kullanarak çalışma alanımıza atalım.<br />
+RClone u indirelim ve AutoRclone un bulunduğu klasöre atalım.<br />
+İndirme linki: [https://rclone.org/downloads/](https://rclone.org/downloads/)<br />
+WinFSP gerekebilir.<br />
+İndirme Linki: [https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi)<br />
 
-AutoRclone un bulunduğu klasörde Powershell penceresi açalım.
-
+AutoRclone un bulunduğu klasörde Powershell penceresi açalım.<br />
 `pip3 install -r ./requirements.txt`
 
 **Rclone Config**
