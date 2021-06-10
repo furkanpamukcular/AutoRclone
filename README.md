@@ -38,7 +38,7 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  AutoRclone un bulunduğu klasörde Powershell penceresi açalım.<br />
  `pip3 install -r ./requirements.txt`
 
-Adım 2. Google Cloud üzerinde projemizi oluşturalım.
+Adım 2. GDrive için Google Cloud üzerinde projemizi oluşturalım.
  ---------------------------------
  * [Google Cloud](https://console.cloud.google.com/) hesabınıza giriş yapın
  * Sol üstten 1 adet proje oluşturun, oluştuırduktan sonra projeyi seçin
@@ -65,11 +65,11 @@ Adım 3. Rclone Config
  
  * Bundan sonraki adımlar sadece Google Drive için verilmiştir. Diğer storage sistemleri için kendiniz ayar bulmalısınız.
  
- * Client ID:
- * Client_secret:
+ * Client ID: BOŞ
+ * Client_secret: BOŞ
  * scope kısmında 1 e basıp devam ediyoruz. (1 e bastığımızda direkt olarak full yetki vermiş oluyoruz. İsteyen istediği gibi özelleştirebilir.)
- * root_folder_id Boş
- * service_account_file Boş
+ * root_folder_id BOŞ
+ * service_account_file BOŞ
  * Advanced Config için N diyoruz.
  * Use auto config? Sorusuna **N** diyoruz.
  * Terminalde çıkan linki kopyalayıp tarayıcımızda açıyoruz. Projeyi oluşturduğumuz hesap ile giriş yapıp herşeye izin veriyoruz.
@@ -79,10 +79,8 @@ Adım 3. Rclone Config
  * Config işlemimiz tamamlandı. Q enter yaparak config ekranından çıkabiliriz.
  
  
-Adım 4. Service accountlarını oluşturalım
+Adım 4. GDrive için Service accountlarını oluşturma
 ---------------------------------
-
- **Service Accountlarını oluşturma**
  
  Kodumuz gayet basit.<br />
  `python3 multifactory.py --quick-setup N`<br />
@@ -93,7 +91,7 @@ Adım 4. Service accountlarını oluşturalım
  
  **Herkese önerim 1 projeden fazla açmayın aksi takdirde google dan ban yiyebilirsiniz.**
 
-Adım 5. Service Accountlarını Shared Drive'a ekleme
+Adım 5. GDrive için Service Accountlarını Shared Drive'a ekleme
 ---------------------------------
 
  Yine buradada komudumuz basit.
