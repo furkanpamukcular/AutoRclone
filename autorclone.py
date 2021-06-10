@@ -13,18 +13,27 @@ from logging.handlers import RotatingFileHandler
 
 # ------------配置项开始------------------
 
-# Account目录
-sa_json_folder = r'/root/folderrclone/accounts'  # 绝对目录，最后没有 '/'，路径中不要有空格
+# Account Klasörünün olduğu dosyanın yolunu girin
+# Örnek windows: D:\User Kalsörü\Desktop\AutoRclone\accounts
+sa_json_folder = r'/root/AutoRclone/accounts'
 
-# Rclone运行命令
-# 1. 填你正在用/想要用的，这里写的是move，也可以是copy/sync ......
-# 2. 建议加上 `--rc` ，不加也没事，后面脚本会自动加上的
-# 3. 因为不起screen，如果你希望关注rclone运行的状态，请一定要用 `--log-file` 将rclone输出重定向到文件
-cmd_rclone = 'rclone move /home/tomove GDrive:/tmp --drive-server-side-across-configs -v --log-file /tmp/rclone.log'
+# Rclone un göndermek için kullandığı kod
+# Örnek Kodda değiştirmeniz gereken 2 kısım var "root/ChiaDepot" ve "GDrive:"
+# Gdrive ile belirtilen kısım RClone daki config in ismidir.
+cmd_rclone = 'rclone move /root/ChiaDepot GDrive: --drive-server-side-across-configs -v --include "/*.plot"'
 
-# 检查rclone间隔 (s)
-check_after_start = 60  # 在拉起rclone进程后，休息xxs后才开始检查rclone状态，防止 rclone rc core/stats 报错退出
-check_interval = 10  # 主进程每次进行rclone rc core/stats检查的间隔
+# Rclone Config de belirlediğiniz ismi yazın.
+rclone_dest_name = 'GDrive'  
+
+# AutoRclone'un loglarını tuttuğu yer. Dosya yolunu değişmesi gerekiyorsa değiştirin.
+script_log_file = r'/root/AutoRclone/AutoRclone.log'
+instance_lock_path = r'/root/AutoRclone/AutoRclone.lock'
+instance_config_path = r'/root/AutoRclone/AutoRclone.conf'
+
+
+
+check_after_start = 15  
+check_interval = 10 
 
 # rclone帐号更换监测条件
 switch_sa_level = 1  # 需要满足的规则条数，数字越大切换条件越严格，一定小于下面True（即启用）的数量，即 1 - 4(max)
@@ -42,14 +51,10 @@ switch_sa_way = 'runtime'
 
 # rclone配置参数 （当且仅当 switch_sa_way 为 `config` 时使用，且需要修改）
 rclone_config_path = '/root/.config/rclone/rclone.conf'  # Rclone 配置文件位置
-rclone_dest_name = 'GDrive'  # Rclone目的地名称（与cmd_rclone中对应相同，并保证SA均已添加）
 
 # 本脚本临时文件
-instance_lock_path = r'/tmp/autorclone.lock'
-instance_config_path = r'/tmp/autorclone.conf'
 
 # 本脚本运行日志
-script_log_file = r'/tmp/autorclone.log'
 logging_datefmt = "%m/%d/%Y %I:%M:%S %p"
 logging_format = "%(asctime)s - %(levelname)s - %(funcName)s - %(message)s"
 

@@ -1,34 +1,106 @@
-# Autorclone 
+Adım 1. Kodları sanal sunucunuza kopyalayın
+---------------------------------
+Herşeyden önce python3 ü yükleyin
+```
+apt-get install -y python3 python3-pip
+```
 
-A python script lists Which Use Service Account to bypass the 750G upload file size limit on Google Drive
-based on [folderclone](https://github.com/Spazzlo/folderclone)
+**Linux İçin**
+---------------------------------
+```
+sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
+```
+Rclone kurulumu bittikten sonra bu komutu çalıştırıp repoyu çekelim
+```
+sudo git clone https://github.com/puffytr/AutoRclone AutoRclone && cd AutoRclone && sudo pip3 install -r requirements.txt
+```
+**Windows İçin**
+---------------------------------
+Python3 ü indirelim ve kuralım
+İndirme linki: [https://www.python.org/downloads/release/python-395/](https://www.python.org/downloads/release/python-395/)
+**Önemli NOT:** Kurulum dosyasını açtıktan sonra altta bulunan **Add to PATH** Kutucuğunu işaretleyin.
 
-Different from The exist project, This repo use [Rclone](https://rclone.org) to **transfer files from local disk 
-to Google Drive or Team Drive**.
+Repoyu ister ZIP olarak ister GIT kullanarak çalışma alanımıza atalım.
+RClone u indirelim ve AutoRclone un bulunduğu klasöre atalım.
+İndirme linki: [https://rclone.org/downloads/](https://rclone.org/downloads/)
+WinFSP gerekebilir.
+İndirme Linki: [https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi)
 
-## Requirements for using the scripts
+AutoRclone un bulunduğu klasörde Powershell penceresi açalım.
 
-* Python ^3.4 **(Use 64-Bit Python only)**
-* Python Library which list in `requirements.txt`
-* Rclone ^1.41 (To support `service_account_credentials` feature )
+`pip3 install -r ./requirements.txt`
 
-## Setup
+**Rclone Config**
+---------------------------------
 
-> Chinese Version: [使用Service Account突破rclone单账号GD每日750G上传限制](//blog.rhilip.info/archives/1135/)
+Rclone u vs. kurduktan sonra 
 
-1. setup `multifactory.py`
-    1) Head over to <https://console.developers.google.com/> and sign in with your account.
-    2) Click "Library" on the left column, then click on "Select a project" at the top. Click on `NEW PROJECT` on the top-right corner of the new window.
-    3) In the Project name section, input a project name of your choice. Wait till the project creation is done and then click on "Select a project" again at the top and select your project.
-    4) Select "OAuth consent screen" and fill out the **Application name** field with a name of your choice. Scroll down and hit "Save"
-    5) Select "Credentials"  and select Create credentials. Choose "OAuth client ID". Choose "Other" as your **Application type** and hit "Create". Hit "Ok". You will now be presented with a list of "OAuth 2.0 client IDs". At the right end, there will be a download icon. Select it to download and save it as `credentials.json` in the script folder.
-    6) Find out how many projects you'll need. For example, a 100 TB job will take approximately 135 service accounts to make a full clone. Each project can have a maximum of 100 service accounts. In the case of the 100TB job, we will need 2 projects. `multifactory.py` conveniently includes a quick setup option. Run the following command `python3 multifactory.py --quick-setup N`. **Replace `N` with the amount of projects you need!**. If you want to only use new projects instead of existing ones, make sure to add `--new-only` flag. It will automatically start doing all the hard work for you.
-    6a) Running this for the first time will prompt you to login with your Google account. Login with the same account you used for Step 1. If will then ask you to enable a service. Open the URL in your browser to enable it. Press Enter once it's enabled.
+Linux için: rclone config
+Windows için: ./rclone.exe config
 
-2. Steps to add all the service accounts to the Shared Drive
-    1) Once `multifactory.py` is done making all the accounts, open Google Drive and make a new Shared Drive to copy to.
-    2) Run the following command `python3 masshare.py -d SDFolderID`. Replace the `SDFolderID` with `XXXXXXXXXXXXXXXXXXX`. The Folder ID can be obtained from the Shared Drive URL `https://drive.google.com/drive/folders/XXXXXXXXXXXXXXXXXXX`. `masshare.py` will start adding all your service accounts.
+Config yapmanız gerekmektedir.
 
-3. Steps for `autorclone.py`
-    1) Change script config at the beginning of file.
-    2) Run it manually in `screen` or Add to crontab like `0 */1 * * * /usr/bin/python3 /path/to/autorclone.py`
+* Name olarak GDrive yazbilirsiniz. Sizin tercihiniz.
+* Storage kısmına hangi storage kısmını bağlayacaksanız onu seçin. GDrive için 15 (Rclone güncelleme alırsa sıralma değişebilir kontrol etmekte fayada var.)
+
+
+* Bundan sonraki adımlar sadece Google Drive için verilmiştir. Diğer storage sistemleri için kendiniz ayar bulmalısınız.
+
+* Client ID:
+* Client_secret:
+* scope kısmında 1 e basıp devam ediyoruz. (1 e bastığımızda direkt olarak full yetki vermiş oluyoruz. İsteyen istediği gibi özelleştirebilir.)
+* root_folder_id Boş
+* service_account_file Boş
+* Advanced Config için N diyoruz.
+* Use auto config? Sorusuna **N** diyoruz.
+* Terminalde çıkan linki kopyalayıp tarayıcımızda açıyoruz. Projeyi oluşturduğumuz hesap ile giriş yapıp herşeye izin veriyoruz.
+* İzinleri verdikten sonra karşımıza kod çıkıyor. Bu kodu kopyalayıp Terminal e yapıştırıyoruz.
+* Configure this as a Shared Drive (Team Drive)? Sorusuna **Y** diyoruz.
+* Karşımıza açtığımız Shared Drive Lar çıkıyor. Hangisini kullanmak istiyorsak solundaki sayıyı yazıyoruz ve enter a basıyoruz.
+* Config işlemimiz tamamlandı. Q enter yaparak config ekranından çıkabiliriz.
+
+
+Adım 2. Google Cloud üzerinde projemizi oluşturalım.
+---------------------------------
+* [Google Cloud](https://console.cloud.google.com/) hesabınıza giriş yapın
+* Sol üstten 1 adet proje oluşturun, oluştuırduktan sonra projeyi seçin
+* Arama kısmına Drive yazın ve [Google Drive API]https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com Kısmına giriş yapıp Enable butonuna basın.
+* Soldaki Menüden [API & Services](https://console.cloud.google.com/apis/dashboard) kısmına gelin
+* Soldaki menüden OAuth consent screen kısmına gelin External seçeneğini seçin ve devam edin. * ile işaretlenen bilgileri doldurmanız yeterli.
+* Oluşturduktan sonra tekrar OAuth consent screen kısmına gelin Testing kısmının altındaki Publish App butonuna basın.
+* Credentials kısmına gelin **+ Create Credential** e tıklayıp OAuth client ID ye tıklayın ve oluşturma işlemine devam edin. (Application Type ı ben Windows App olarak seçiyorum size kalmış seçim.)
+* Crentials i oluşturduktan sonra **Credentials** sekmesine geri gelin ve oluşturduğunuz keyi indiirp AutoRclone un bulunduğu klasöre **credentials.json** ismiyle atın.
+ 
+Adım 3. Service accountlarını oluşturalım
+---------------------------------
+
+**Service Accountlarını oluşturma**
+
+Kodumuz gayet basit.
+`python3 multifactory.py --quick-setup N`
+
+Ensondaki N yerine kaç tane proje açmak istiyosanız onu belirtin.
+Örnek kod:  `python3 multifactory.py --quick-setup N`
+1 Proje = 100 Kullanıcı = 75TB
+
+**Herkese önerim 1 projeden fazla açmayın aksi takdirde google dan ban yiyebilirsiniz.**
+
+Adım 4. Service Accountlarını Shared Drive'a ekleme
+---------------------------------
+
+Yine buradada komudumuz basit.
+ `python3 masshare.py -d FolderID`
+
+ **FolderID** Kısmına shared driveınınz ID sini yazıcaksınız. Bulması çok basit.
+
+ * Google Drive'ı açın Shred drive ınıza girin ve linkin sonundaki kodu kopyalayın.
+
+ Örnek Link: `https://drive.google.com/drive/folders/0APX5ggfgZnmEUayPVA`
+ Örnek FolderID: `0APX5ggfgZnmEUayPVA`
+ Örnek Kod: `python3 masshare.py -d 0APX5ggfgZnmEUayPVA`
+
+ Adım 5. Ayar Yapmak
+---------------------------------
+autorclone.py adlı dosyayı editörümüz ile açıyoruz
+
+Sizin için gereklı olan yorum satırlarını türkçeleştirdim ve gerekli bilgileri verdim. Yorum satırlarını okuyarak gerekli yerleri doldurun.
