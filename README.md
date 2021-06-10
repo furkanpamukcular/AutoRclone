@@ -1,8 +1,6 @@
 GİRİŞ
 ---------------------------------
 
-**Sıkıntı oluştuğu zamanlarda github üzerinden issues kısmından issue açarsanız ileride sıkıntı yaşayan başka arkadaşımız olursa oradan yaralanabilir.**
-
 Bu repo da accounları oluşturmak gibi işlemleri 1 sefer yapıp diğer sunuculara kopyala yapıştır yönetmi ile gönderebilirsiniz.
 
 Bütün işlemleri yaptıktran sonra kopyaladığınız sunucularda Proje oluşturma, Service account u oluşturma vb. işlemleri yapmanıza gerek yok.
