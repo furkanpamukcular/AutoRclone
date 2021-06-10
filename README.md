@@ -3,8 +3,6 @@ GİRİŞ
 
 **Sıkıntı oluştuğu zamanlarda github üzerinden issues kısmından issue açarsanız ileride sıkıntı yaşayan başka arkadaşımız olursa oradan yaralanabilir.**
 
-AutoRclone oluşturduğunuz dosyaları google drive gibi birçok yere upload etmenize yarar. AutoRclone un avantajı Google Drive gibi kullanıcı başına 750GB limiti olan yerlerde limiti aşmanıza olanak tanır.
-
 Bu repo da accounları oluşturmak gibi işlemleri 1 sefer yapıp diğer sunuculara kopyala yapıştır yönetmi ile gönderebilirsiniz.
 
 Bütün işlemleri yaptıktran sonra kopyaladığınız sunucularda Proje oluşturma, Service account u oluşturma vb. işlemleri yapmanıza gerek yok.
