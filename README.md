@@ -1,7 +1,7 @@
 GİRİŞ
 ---------------------------------
 
-Bu repo da accounları oluşturmak gibi işlemleri 1 sefer yapıp diğer sunuculara kopyala yapıştır yönetmi ile gönderebilirsiniz.
+Bu repo da accounları oluşturmak gibi işlemleri 1 sefer yapıp diğer sunuculara kopyala yapıştır yöntemi ile (scp komutu, FTP protokolü vb.) gönderebilirsiniz.
 
 Bütün işlemleri yaptıktran sonra kopyaladığınız sunucularda Proje oluşturma, Service account u oluşturma vb. işlemleri yapmanıza gerek yok.
 
