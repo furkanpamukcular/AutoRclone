@@ -114,5 +114,5 @@ Adım 7. Otomatikleştirme
  Basit bir işlem yapacağız.<br />
  `crontab -e` yazıyoruz ve crontab ımıza ulaşıyoruz.<br />
  **NOT: Crontab ı ilk defa açıyorsanız hangi editör ü kullanmak istediğinizi sorar. Tercihim `nano` kullanmanız kullanımı basit.**<br />
- en alt satıra `0 */1 * * * /usr/bin/python3 /root/autorclone/autorclone.py` yazıyoruz ve bitiyor.
+ en alt satıra `0 */1 * * * /usr/bin/python3 /root/AutoRclone/autoclone.py` yazıyoruz ve bitiyor.
  **NOT: klasörün yeri değişik ise klasörün ismini vs. değiştirin.**
