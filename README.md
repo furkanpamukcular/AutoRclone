@@ -15,7 +15,7 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
 **Linux İçin**
 ---------------------------------
  ```
- sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
+ sudo apt-get install screen git curl unzip && curl https://rclone.org/install.sh | sudo bash
  ```
  Rclone kurulumu bittikten sonra bu komutu çalıştırıp repoyu çekelim
  ```
