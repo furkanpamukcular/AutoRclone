@@ -11,6 +11,9 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  ```
  apt-get install -y python3 python3-pip
  ```
+  ```
+ sudo apt-get install -y fuse
+ ```
 
 **Linux İçin**
 ---------------------------------
