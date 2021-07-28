@@ -19,7 +19,7 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
 
  ```
   ```
- sudo apt-get install -y fuse
+ apt-get install -y fuse
  ```
 
 **Linux İçin**
