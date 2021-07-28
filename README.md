@@ -29,7 +29,7 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  ```
  Rclone kurulumu bittikten sonra bu komutu çalıştırıp repoyu çekelim
  ```
- git clone https://github.com/puffytr/AutoRclone AutoRclone && cd AutoRclone && pip3 install -r requirements.txt
+ git clone https://github.com/furkanpamukcular/AutoRclone AutoRclone && cd AutoRclone && pip3 install -r requirements.txt
  ```
 **Windows İçin**
 ---------------------------------
