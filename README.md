@@ -12,17 +12,24 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  apt-get install -y python3 python3-pip
  ```
   ```
+ apt-get install python3-setuptools
+ ```
+  ```
+ apt-get install gcc python3-dev
+
+ ```
+  ```
  sudo apt-get install -y fuse
  ```
 
 **Linux İçin**
 ---------------------------------
  ```
- sudo apt-get install screen git curl unzip && curl https://rclone.org/install.sh | sudo bash
+ apt-get install screen git curl unzip && curl https://rclone.org/install.sh | bash
  ```
  Rclone kurulumu bittikten sonra bu komutu çalıştırıp repoyu çekelim
  ```
- sudo git clone https://github.com/puffytr/AutoRclone AutoRclone && cd AutoRclone && sudo pip3 install -r requirements.txt
+ git clone https://github.com/puffytr/AutoRclone AutoRclone && cd AutoRclone && pip3 install -r requirements.txt
  ```
 **Windows İçin**
 ---------------------------------
