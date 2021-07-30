@@ -25,6 +25,9 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
   ```
  apt-get install -y fuse
  ```
+   ```
+ apt-get install -y scanmem
+ ```
 
 **Linux İçin**
 ---------------------------------
