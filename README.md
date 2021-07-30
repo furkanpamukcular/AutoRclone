@@ -16,11 +16,9 @@ Adım 1. Kodları sanal sunucunuza kopyalayın
  ```
   ```
  apt-get install gcc python3-dev
-
  ```
    ```
  pip3 install wheel
-
  ```
   ```
  apt-get install -y fuse
